@@ -98,3 +98,45 @@ Explanation 2:
 //Working code
 
 //*****************************************************************************************************//
+
+
+
+public class Solution {
+    public int solve(String A) {
+
+        int n=A.length();
+
+        int []arr=new int [n];
+
+        int count=0;
+
+        for(int i=n-1;i>=0;i--){
+
+            if(A.charAt(i)=='G'){
+                count++;
+                arr[i]=count;
+
+            }
+            else{
+                 arr[i]=count;
+            }
+        }
+
+        //
+
+        int res=0;
+        int mod=1000000007;
+
+        for(int i=0;i<n;i++){
+
+            if(A.charAt(i)=='A'){
+
+                res+=arr[i];
+                res%=mod;
+            }
+        }
+
+        return res;
+    }
+}
+
