@@ -88,3 +88,22 @@ Explanation 2:
         return count;
     }
 }
+
+
+//O C
+
+public class Solution {
+    public int solve(int[] A, int B) {
+        int n=A.length;
+        int count=0;
+        HashSet<Integer>set=new HashSet();
+        for(int i=0;i<n;i++){
+           if(set.contains(A[i]^B)){
+               count++;
+           }
+           set.add(A[i]);
+        }
+        return count;
+    }
+}
+
